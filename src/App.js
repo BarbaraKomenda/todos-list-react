@@ -10,9 +10,13 @@ const tasks = [
   { id: 2, content: "przejść na Reacta", done: true }
 ];
 
-const hideDone = false;
-
 function App() {
+  const [hideDone, setHideDone] = useState(false);
+
+  const toggleDone =() => {
+    setHideDone(hideDone => !hideDone);
+  };
+
   return (
     <Container>
       <Header title="Lista zadań" />
