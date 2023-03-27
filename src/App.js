@@ -1,3 +1,4 @@
+import React, { useState } from 'react';
 import Form from "./Form";
 import Tasks from "./Tasks";
 import Buttons from "./Buttons";
@@ -13,7 +14,7 @@ const tasks = [
 function App() {
   const [hideDone, setHideDone] = useState(false);
 
-  const toggleDone =() => {
+  const toggleHideDone =() => {
     setHideDone(hideDone => !hideDone);
   };
 
