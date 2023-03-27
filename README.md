@@ -1,8 +1,11 @@
-#Todos-list-react
+# Todos-list-react
 
 As part of my homework on the Frontend Developer course on the youcode platform, I created a task list. The user can enter tasks into the list. On the list, it is possible to select completed tasks or remove them completely. There is also an option to hide or show completed tasks and complete all tasks.
 
 You can visit it here: [homepage](https://barbarakomenda.github.io/todos-list-react/)
+
+![Zrzut ekranu 2023-03-27 o 20 19 00](https://user-images.githubusercontent.com/122162134/228031275-a16ec222-ea62-4dbb-b8b4-49f35cbfacd3.png)
+
 
 ## To create this website I used the following technologies:
 1. HTML
