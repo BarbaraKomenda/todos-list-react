@@ -1,11 +1,18 @@
+import React, { useState } from "react";
 import "./style.css";
 
-const Form = (addNewTask) => {
+const Form = ({ addNewTask }) => {
     const [newTaskContent, setNewTaskContent] = useState("");
 
     const onFormSubmit = (event) => {
         event.preventDefault();
-        addNewTask(newTaskContent.trim());
+        const trimmedNewTaskContent = newTaskContent.trim();
+
+        if(!trimmedNewTaskContent.trim) {
+        return;
+        }
+        addNewTask(trimmedNewTaskContent);
+        setNewTaskContent("");
     };
 
     return (
@@ -18,5 +25,5 @@ const Form = (addNewTask) => {
             <button className="form__button">Dodaj zadanie</button>
         </form>
     );
-}
+};
 export default Form;
