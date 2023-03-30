@@ -8,7 +8,8 @@ const Form = ({ addNewTask }) => {
         event.preventDefault();
         const trimmedNewTaskContent = newTaskContent.trim();
 
-        if(!trimmedNewTaskContent.trim) {
+        if(!trimmedNewTaskContent.) 
+        {
         return;
         }
         addNewTask(trimmedNewTaskContent);
@@ -21,7 +22,7 @@ const Form = ({ addNewTask }) => {
                 value={newTaskContent}
                 className="form__input"
                 placeholder="Co jest do zrobienia?"
-                onChange={(target) => setNewTaskContent(target.value)} />
+                onChange={({target}) => setNewTaskContent(target.value)} />
             <button className="form__button">Dodaj zadanie</button>
         </form>
     );
