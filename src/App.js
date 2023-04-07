@@ -8,13 +8,7 @@ import Header from "./Header";
 import Container from "./Container";
 import styled from "styled-components";
 
-const getInitialTasks = () => {
-  const tasksFromLocalStorage = localStorage.getItem("tasks");
-
-  return tasksFromLocalStorage
-    ? JSON.parse(tasksFromLocalStorage)
-    : [];
-};
+const getInitialTasks = () => JSON.parse(localStorage.getItem("tasks")) || [];
 
 function App() {
   const [hideDone, setHideDone] = useState(false);
@@ -25,31 +19,36 @@ function App() {
   }, [tasks]);
 
   const toggleHideDone = () => {
-    setHideDone(hideDone => !hideDone);
+    setHideDone((hideDone) => !hideDone);
   };
 
   const removeTask = (id) => {
-    setTasks(tasks => tasks.filter(task => task.id !== id));
+    setTasks((tasks) => tasks.filter((task) => task.id !== id));
   };
 
   const toggleTaskDone = (id) => {
-    setTasks(tasks => tasks.map(task => {
-      if (task.id === id) {
-        return { ...task, done: !task.done };
-      }
+    setTasks((tasks) =>
+      tasks.map((task) => {
+        if (task.id === id) {
+          return { ...task, done: !task.done };
+        }
 
-      return task;
-    }));
+        return task;
+      })
+    );
   };
 
   const setAllDone = () => {
-    setTasks(tasks => tasks.map(task => ({
-      ...task, done: true
-    })));
+    setTasks((tasks) =>
+      tasks.map((task) => ({
+        ...task,
+        done: true,
+      }))
+    );
   };
 
   const addNewTask = (content) => {
-    setTasks(tasks => [
+    setTasks((tasks) => [
       ...tasks,
       {
         content,
@@ -87,6 +86,6 @@ function App() {
       />
     </Container>
   );
-};
+}
 
 export default App;
